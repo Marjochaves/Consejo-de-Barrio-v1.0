@@ -2,7 +2,7 @@ import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
 import { SYSTEM_INSTRUCTION } from '../constants';
 
 // Initialize the API client
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
 
 export const createChatSession = (): Chat => {
   return ai.chats.create({
